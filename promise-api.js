@@ -12,6 +12,4 @@ const p2 = new Promise((resolve) => {
   }, 2000);
 });
 
-Promise.race([p1, p2])
-  .then((result) => console.log(result))
-  .catch((err) => console.log("error", err.message));
+Promise.all([p1, p2]).then((result) => console.log(result));
